@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>Convertify</title>
+    </head>
+    <body>
+        <div class="father">
+            <h2>TEMPERATURE CONVERTOR</h2>
+            <div class="child">
+                <div class="content-box">
+                    &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<label
+                        for="cels" onmouseover="celover()">Celsius</label>
+                    <input type="number" id="cels" placeholder="°C"
+                        oninput="c2f();c2k();">
+                </div>
+                <div class="content-box">
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<label for="fah">Fahrenheit</label>
+                    <input type="number" id="fah" placeholder="°F"
+                        oninput="f2c();f2k();">
+                </div>
+                <div class="content-box">
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<label
+                        for="kel">Kelvin</label>
+                    <input type="number" id="kel" placeholder="K"
+                        oninput="k2c(); k2f();">
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            let cel= document.getElementById("cels");
+            let fahr= document.getElementById("fah");
+            let kelv= document.getElementById("kel");
+
+            
+            function c2f(){
+                var x = (parseFloat(cel.value)* 9 / 5) + 32;
+                fahr.value=parseFloat(x.toFixed(2));
+            }
+
+            function c2k(){
+                var x =(parseFloat(cel.value)+273.15);
+                kelv.value=parseFloat(x.toFixed(2));
+            }
+
+            function f2c(){
+                var x = (parseFloat(fahr.value)-32)* 5 / 9;
+                cel.value=parseFloat(x.toFixed(2)) ;
+            }
+
+            function f2k(){
+                var x = (parseFloat(fahr.value)-32)/1.8+273.15;
+                kelv.value=parseFloat(x.toFixed(2)) 
+
+            }
+
+            function k2c(){
+                var x = (parseFloat(kelv.value)-273.15)
+                cel.value=parseFloat(x.toFixed(2));
+            }
+            
+            
+            function k2f(){
+                var x = (parseFloat(kelv.value)-273.15)* 9 / 5 + 32;
+                fahr.value=parseFloat(x.toFixed(2));
+            }
+
+          
+
+        </script>
+
+    </body>
+</html>
